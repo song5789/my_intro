@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import React from "react";
 
 const StyledBack = styled.div`
   width: 100%;
@@ -9,6 +10,8 @@ const StyledBack = styled.div`
   position: absolute;
 `;
 
-export default function GradienBG({ children }) {
+function GradienBG({ children }) {
   return <StyledBack className="bg">{children}</StyledBack>;
 }
+
+export default React.memo(GradienBG);

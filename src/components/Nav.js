@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion, useScroll } from "framer-motion";
 import "animate.css";
 
 const StyledNav = styled.div`
@@ -37,7 +38,17 @@ const StyledNav = styled.div`
   }
 `;
 
+const ScrollProgress = styled(motion.div)`
+  position: sticky;
+  top: 80px;
+  height: 20px;
+  background: #f25f41;
+  transform-origin: 0%;
+`;
+
 export default function Nav() {
+  const { scrollYProgress } = useScroll();
+
   const mouseIn = (e) => {
     e.target.classList.add("animate__animated");
     e.target.classList.add("animate__heartBeat");
@@ -51,8 +62,8 @@ export default function Nav() {
       <StyledNav>
         <div className="flex-row eng">
           <div className="btns">
-            <a href="#about" onMouseEnter={mouseIn} onMouseLeave={mouseOut}>
-              About
+            <a href="#main" onMouseEnter={mouseIn} onMouseLeave={mouseOut}>
+              Main
             </a>
           </div>
           <div className="btns">
@@ -72,6 +83,7 @@ export default function Nav() {
           </div>
         </div>
       </StyledNav>
+      <ScrollProgress style={{ scaleX: scrollYProgress }} />
     </>
   );
 }

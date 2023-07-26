@@ -85,7 +85,7 @@ export default function Main() {
         },
       }}
     >
-      <StyledMain className="eng">
+      <StyledMain className="eng" id="main">
         <StyledTop>
           <Circles color="green" />
           <Circles color="yellow" />
