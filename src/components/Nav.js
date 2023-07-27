@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import "animate.css";
 
 const StyledNav = styled.div`
@@ -14,6 +14,7 @@ const StyledNav = styled.div`
   box-sizing: border-box;
   position: sticky;
   top: 0;
+  z-index: 10;
 
   .flex-row {
     display: flex;
@@ -41,13 +42,19 @@ const StyledNav = styled.div`
 const ScrollProgress = styled(motion.div)`
   position: sticky;
   top: 80px;
-  height: 20px;
+  height: 10px;
   background: #f25f41;
   transform-origin: 0%;
+  z-index: 10;
 `;
 
 export default function Nav() {
   const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
   const mouseIn = (e) => {
     e.target.classList.add("animate__animated");
@@ -57,12 +64,16 @@ export default function Nav() {
     e.target.classList.remove(`animate__animated`);
     e.target.classList.remove("animate__heartBeat");
   };
+
+  const toTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <>
       <StyledNav>
         <div className="flex-row eng">
           <div className="btns">
-            <a href="#main" onMouseEnter={mouseIn} onMouseLeave={mouseOut}>
+            <a href="#main" onMouseEnter={mouseIn} onMouseLeave={mouseOut} onClick={toTop}>
               Main
             </a>
           </div>
@@ -72,8 +83,8 @@ export default function Nav() {
             </a>
           </div>
           <div className="btns">
-            <a href="#project" onMouseEnter={mouseIn} onMouseLeave={mouseOut}>
-              Project
+            <a href="#portfolio" onMouseEnter={mouseIn} onMouseLeave={mouseOut}>
+              Portfolio
             </a>
           </div>
           <div className="btns">
@@ -83,7 +94,7 @@ export default function Nav() {
           </div>
         </div>
       </StyledNav>
-      <ScrollProgress style={{ scaleX: scrollYProgress }} />
+      <ScrollProgress style={{ scaleX }} />
     </>
   );
 }

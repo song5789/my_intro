@@ -3,6 +3,7 @@ import "./css/global.css";
 import GradienBG from "./components/GradienBG";
 import Main from "./components/Main";
 import Skils from "./components/Skills";
+import Portfolio from "./components/Portfolio";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Nav />
       <Main />
       <Skils />
+      <Portfolio />
     </GradienBG>
   );
 }

@@ -4,7 +4,7 @@ const StyledMain = styled.div`
   width: 70%;
   background: #2d2d2e;
   color: #fff;
-  margin: 3rem auto;
+  margin: 15rem auto;
   border-radius: 10px;
 `;
 const StyledTop = styled.div`
@@ -85,21 +85,23 @@ export default function Main() {
         },
       }}
     >
-      <StyledMain className="eng" id="main">
-        <StyledTop>
-          <Circles color="green" />
-          <Circles color="yellow" />
-          <Circles color="red" />
-        </StyledTop>
-        <StyledCodeBook>
-          <div className="text one">
-            <h1>안녕하세요.</h1>
-          </div>
-          <div className="text two">
-            <h1>개발자를 꿈꾸는 송명수입니다.</h1>
-          </div>
-        </StyledCodeBook>
-      </StyledMain>
+      <div style={{ height: "52vh" }}>
+        <StyledMain className="eng">
+          <StyledTop>
+            <Circles color="green" />
+            <Circles color="yellow" />
+            <Circles color="red" />
+          </StyledTop>
+          <StyledCodeBook>
+            <div className="text one">
+              <h1>안녕하세요.</h1>
+            </div>
+            <div className="text two">
+              <h1>개발자를 꿈꾸는 송명수입니다.</h1>
+            </div>
+          </StyledCodeBook>
+        </StyledMain>
+      </div>
     </ThemeProvider>
   );
 }

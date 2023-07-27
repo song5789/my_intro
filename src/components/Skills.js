@@ -1,27 +1,36 @@
 import styled from "styled-components";
 import { MdBuild } from "react-icons/md";
-import { SiHtml5, SiCss3, SiJavascript, SiStyledcomponents } from "react-icons/si";
-import { color } from "framer-motion";
+import { SiHtml5, SiCss3, SiJavascript, SiStyledcomponents, SiReact, SiNodedotjs, SiNextdotjs, SiSpring } from "react-icons/si";
+import { BiLink } from "react-icons/bi";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const SkilsBackground = styled.div`
   width: 90%;
-  height: 500px;
-  margin: 3rem auto;
+  margin: 0rem auto 3rem auto;
   background: #fff;
-  padding: 2rem;
+  padding: 1rem;
   box-sizing: border-box;
   border-radius: 20px;
   box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.8);
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    opacity: 0.6;
+  }
 `;
 const SkilsTilte = styled.p`
   height: 50px;
   line-height: 50px;
   font-size: 2rem;
-  opacity: 0.8;
-  margin: 0 0 1rem 0;
+  margin: 0 0 2rem 0;
 `;
-const BasicSkils = styled.div`
-  width: 35%;
+const SkilsContainer = styled.div`
+  width: ${(props) => props.width || "10%"};
   border-radius: 25px;
   padding: 3rem 2rem;
   box-sizing: border-box;
@@ -30,76 +39,119 @@ const BasicSkils = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  h6 {
-    margin: 0 0 1.5rem 0;
-  }
+  margin-bottom: 2rem;
 
   & > div {
     display: flex;
     flex-direction: row;
     width: 100%;
   }
-
-  .basic-tech {
+  &:hover {
+    transform: translateY(-5%);
+  }
+  h6 {
+    margin: 0 0 1.5rem 0;
+  }
+  .tech {
     width: calc(100% / 3);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
   }
-  .basic-tech > div {
+  .tech > div {
     font-size: 1rem;
   }
-  .level {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.8);
-    font-size: 1rem !important;
-    color: #fff;
-    opacity: 0;
-    transition: 0.3s;
+  .t-two {
+    width: calc(100% / 2);
   }
-  .level:hover {
-    opacity: 1;
+`;
+
+const StyledMotion = styled(motion.div)`
+  & + &:not(:nth-child(3)) {
+    margin-left: 1rem;
   }
 `;
 
 export default function Skils() {
+  const view = useRef(null);
+  const container = {
+    up: { transform: "translateY(-20%)", opacity: 0 },
+    down: { transform: "translateY(0%)", opacity: 1 },
+  };
+
+  const delayHandler = (delay) => {
+    return {
+      duration: 0.5,
+      delay,
+    };
+  };
+
   return (
-    <SkilsBackground>
-      <SkilsTilte>
-        <MdBuild />
-        &nbsp; &nbsp;사용 기술들
-      </SkilsTilte>
-      <div style={{ width: "100%", display: "flex", flexDirection: "row" }}>
-        <BasicSkils>
-          <h6 className="eng">HTML</h6>
-          <div>
-            <div className="basic-tech">
-              <SiHtml5 style={{ color: "tomato" }} />
-              <div>HTML</div>
-              <div className="level">knowledgeble</div>
-            </div>
-            <div className="basic-tech">
-              <SiCss3 style={{ color: "#1b73f7" }} />
-              <div>CSS</div>
-              <div className="level">knowledgeble</div>
-            </div>
-            <div className="basic-tech">
-              <SiJavascript style={{ color: "#f7d023" }} />
-              <div>JS</div>
-              <div className="level">knowledgeble</div>
-            </div>
-          </div>
-        </BasicSkils>
-      </div>
-    </SkilsBackground>
+    <>
+      <SkilsBackground>
+        <a name="skils" href="#skils">
+          <SkilsTilte>
+            <MdBuild />
+            &nbsp;사용 기술
+            <BiLink />
+          </SkilsTilte>
+        </a>
+        <div style={{ width: "100%", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
+          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.2)} style={{ width: "45%" }}>
+            <SkilsContainer width={"100%"}>
+              <h6 className="eng">HTML</h6>
+              <div>
+                <div className="tech">
+                  <SiHtml5 style={{ color: "tomato" }} />
+                  <div>HTML</div>
+                </div>
+                <div className="tech">
+                  <SiCss3 style={{ color: "#1b73f7" }} />
+                  <div>CSS</div>
+                </div>
+                <div className="tech">
+                  <SiJavascript style={{ color: "#f7d023", background: "#000" }} />
+                  <div>JS</div>
+                </div>
+              </div>
+            </SkilsContainer>
+          </StyledMotion>
+          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.4)} style={{ width: "45%" }}>
+            <SkilsContainer width={"100%"}>
+              <h6 className="eng">Frontend</h6>
+              <div className="tech">
+                <SiReact style={{ color: "#20dcf5" }} />
+                <div>React</div>
+              </div>
+            </SkilsContainer>
+          </StyledMotion>
+          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.6)} style={{ width: "45%" }}>
+            <SkilsContainer width={"100%"}>
+              <h6 className="eng">Backend</h6>
+              <div>
+                <div className="tech t-two">
+                  <SiNodedotjs style={{ color: "#32b83a" }} />
+                  <div>Node.js</div>
+                </div>
+                <div className="tech t-two">
+                  <SiSpring style={{ color: "#2fbd38" }} />
+                  <div>Spring Boot</div>
+                </div>
+              </div>
+            </SkilsContainer>
+          </StyledMotion>
+          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.8)} style={{ width: "45%" }}>
+            <SkilsContainer width={"100%"}>
+              <h6 className="eng">FrameWork</h6>
+              <div className="tech">
+                <SiNextdotjs />
+                <div>Next.js</div>
+              </div>
+            </SkilsContainer>
+          </StyledMotion>
+        </div>
+      </SkilsBackground>
+    </>
   );
 }
