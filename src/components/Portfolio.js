@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { MdPadding } from "react-icons/md";
-import { BiLink } from "react-icons/bi";
-import { motion } from "framer-motion";
+import { BiLink, BiLogoGithub } from "react-icons/bi";
+import Stack from "./Stack";
 
 const Background = styled.div`
   width: 100%;
@@ -14,6 +14,7 @@ const Background = styled.div`
   a {
     text-decoration: none;
     color: inherit;
+    transition: 0.2s;
   }
   a:hover {
     text-decoration: underline;
@@ -24,25 +25,102 @@ const Background = styled.div`
 const Title = styled.p`
   width: 100%;
   height: 50px;
-  line-height: 50px;
+  display: flex;
+  align-items: center;
   font-size: 2rem;
   margin: 0 0 2rem 0;
 `;
 
 const ProjectBlock = styled.div`
-  width: 80%;
+  width: 100%;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  transition: 0.4s;
+
+  &:hover {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  & .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  & .img-con {
+    width: 20%;
+    min-width: 20%;
+    margin-right: 2rem;
+    border-radius: 15px;
+  }
+
+  .img-con > img {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+  & + & {
+    margin-top: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 1rem;
+  }
+  li {
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid rgba(0, 0, 0, 0.6);
+  }
+
+  button {
+    margin-top: 1rem;
+    width: 27%;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+
+  button:hover {
+    transform: scale(1.05);
+  }
+
+  button a:hover {
+    text-decoration: none;
+    opacity: 1;
+  }
+
+  button + button {
+    margin-left: 1rem;
+  }
+
+  .github {
+    background: #000;
+    color: #fff;
+  }
 `;
 
 const projects = [
   {
     name: "영화 DB",
-    desc: "교육 과정의 최종 과제로써 TMDB 의 API를 활용한 영화, TV 시리즈의 정보 확인과 간단한 검색을 지원하는 페이지. 아직 미흡한 점도 많지만 차차 개선해나가볼 생각입니다.",
+    desc: "교육 과정의 최종 과제로써 TMDB 의 API를 활용한 영화, TV 시리즈의 정보 확인과 간단한 검색을 지원하는 페이지. 아직 미흡한 점도 많지만 차차 개선해나가볼 예정입니다.",
     api: "TMDB API",
+    github_path: "https://github.com/song5789/next-movie",
+    page_path: "https://next-movie-kumxmbm5c-song5789.vercel.app/",
     image_path: "/my_movie.png",
     tech: [
       {
         name: "Next.js",
-        desc: "Next.js 를 처음사용해보았으나, 강력하고 편리한 라우팅기능으로 인해 페이지 이동을 구현하는것이 매우 쉬웠으며, SSR 의 기본 개념과 사용법에 대해 공부해볼 수 있던 작업물이었습니다.기본 강의만 듣고 나머지는 찾아가면서 작업해서 아직 많이 미흡한 점은있지만 사용이 간편하기에 왜 요즘 Next.js 가 개발자들의 선택을 받는지 알 수 있었습니다.",
+        desc: "Next.js 를 처음사용해보았으나, 강력하고 편리한 라우팅기능으로 인해 페이지 이동을 구현하는것이 매우 쉬웠으며, SSR 의 기본 개념과 사용법에 대해 공부해볼 수 있던 작업물이었습니다. 기본 강의만 듣고 나머지는 찾아가면서 작업해서 아직 많이 미흡한 점은있지만 사용이 간편하기에 왜 요즘 Next.js 가 개발자들의 선택을 받는지 알 수 있었습니다.",
       },
       {
         name: "React",
@@ -50,7 +128,7 @@ const projects = [
       },
       {
         name: "styled-components",
-        desc: "react-slick 라이브러리로 caroucel 스타일링 시 기존 클래스 등으로 적용이 되지않아 사용하게 되었습니다. 그 외 스타일링은 jsx 스타일로 내부 컴포넌트에 작성하여 구성하였습니다.",
+        desc: "react-slick 라이브러리로 caroucel 일반적인 방법으론 스타일 적용이 되지않아 사용하게 되었습니다. 그 외 스타일링은 jsx 스타일로 내부 컴포넌트에 작성하여 구성하였습니다.",
       },
       {
         name: "react-slick",
@@ -60,9 +138,11 @@ const projects = [
   },
   {
     name: "소개 페이지",
-    desc: "개인 소개페이지를 순수 React 만으로 간단하게 제작해보았습니다.",
+    desc: "개인 소개페이지. React로 제작.",
     api: null,
-    image_path: "/my_movie.png",
+    github_path: "https://github.com/song5789/my_intro",
+    page_path: null,
+    image_path: "/my_intro.png",
     tech: [
       {
         name: "React",
@@ -96,9 +176,43 @@ export default function Portfolio() {
           </Title>
         </a>
         {projects.map((v, index) => (
-          <ProjectBlock key={index}>
-            <div>얍</div>
-          </ProjectBlock>
+          <div key={index}>
+            <ProjectBlock>
+              <div className="container">
+                <div className="img-con">
+                  <img src={v.image_path} />
+                </div>
+                <div className="project-info">
+                  <h1>{v.name}</h1>
+                  <ul>
+                    <li>{v.desc}</li>
+                    <li>사용 API: {v.api || "사용 API 없음."}</li>
+                  </ul>
+                  <h2>사용한 기술들</h2>
+                  <Stack list={v.tech} />
+                  <div className="eng b-con">
+                    <button className="github">
+                      <a href={v.github_path} target="_blank" rel="noopener noreferrer">
+                        <BiLogoGithub /> Github Source
+                      </a>
+                    </button>
+                    {v.page_path ? (
+                      <button>
+                        <a href={v.page_path} target="_blank" rel="noopener noreferrer">
+                          Visit Page
+                        </a>
+                      </button>
+                    ) : (
+                      <button className="thispage">
+                        <a href="/">This page</a>
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </ProjectBlock>
+            <hr />
+          </div>
         ))}
       </Background>
     </>

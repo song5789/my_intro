@@ -16,6 +16,7 @@ const SkilsBackground = styled.div`
   a {
     text-decoration: none;
     color: inherit;
+    transition: 0.2s;
   }
 
   a:hover {
@@ -25,7 +26,8 @@ const SkilsBackground = styled.div`
 `;
 const SkilsTilte = styled.p`
   height: 50px;
-  line-height: 50px;
+  display: flex;
+  align-items: center;
   font-size: 2rem;
   margin: 0 0 2rem 0;
 `;
@@ -57,7 +59,6 @@ const SkilsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
   }
   .tech > div {
     font-size: 1rem;

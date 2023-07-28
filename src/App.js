@@ -4,6 +4,7 @@ import GradienBG from "./components/GradienBG";
 import Main from "./components/Main";
 import Skils from "./components/Skills";
 import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Main />
       <Skils />
       <Portfolio />
+      <Contact />
     </GradienBG>
   );
 }
