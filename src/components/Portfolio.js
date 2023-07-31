@@ -204,7 +204,7 @@ export default function Portfolio() {
                       </button>
                     ) : (
                       <button className="thispage">
-                        <a href="/">This page</a>
+                        <a>This page</a>
                       </button>
                     )}
                   </div>
