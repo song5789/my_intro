@@ -180,7 +180,7 @@ export default function Portfolio() {
             <ProjectBlock>
               <div className="container">
                 <div className="img-con">
-                  <img src={v.image_path} />
+                  <img src={`https://song5789.github.io/my_intro${v.image_path}`} />
                 </div>
                 <div className="project-info">
                   <h1>{v.name}</h1>
