@@ -80,7 +80,7 @@ const ProjectBlock = styled.div`
 
   button {
     margin-top: 1rem;
-    width: 27%;
+    min-width: 220px;
     height: 40px;
     border: none;
     border-radius: 8px;
@@ -162,6 +162,24 @@ const projects = [
       },
     ],
   },
+  {
+    name: "Todo-List",
+    desc: "브라우저의 localStorage 기능을 사용하여 별도 DB 없이 필요한 일정을 저장할 수 있게 구현함.",
+    api: null,
+    github_path: "https://github.com/song5789/local_todo/tree/main",
+    page_path: "https://song5789.github.io/local_todo/",
+    image_path: "/local_todolist.png",
+    tech: [
+      {
+        name: "React",
+        desc: "페이지 구성에 리액트가 사용되었습니다..",
+      },
+      {
+        name: "styled-components",
+        desc: "전체 스타일, 애니메이션에 사용되었습니다..",
+      },
+    ],
+  },
 ];
 
 export default function Portfolio() {
@@ -196,17 +214,11 @@ export default function Portfolio() {
                         <BiLogoGithub /> Github Source
                       </a>
                     </button>
-                    {v.page_path ? (
-                      <button>
-                        <a href={v.page_path} target="_blank" rel="noopener noreferrer">
-                          Visit Page
-                        </a>
-                      </button>
-                    ) : (
-                      <button className="thispage">
-                        <a>This page</a>
-                      </button>
-                    )}
+                    <button>
+                      <a href={v.page_path || ""} target="_blank" rel="noopener noreferrer">
+                        Visit Page
+                      </a>
+                    </button>
                   </div>
                 </div>
               </div>
