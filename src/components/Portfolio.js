@@ -180,6 +180,24 @@ const projects = [
       },
     ],
   },
+  {
+    name: "캘린더",
+    desc: "Todo-List 의 발전. 마찬가지로 Local Storage 를 이용하여 저장한 스케쥴을 로컬에 저장하고 불러옴. 캘린더를 눌러 일별로 스케쥴 넣기 가능. 오른쪽 창에서 모든 스케쥴을 한 번에 확인 가능하게 꾸며놓았습니다.",
+    api: null,
+    github_path: "https://github.com/song5789/local_calendar",
+    page_path: "https://song5789.github.io/local_calendar/",
+    image_path: "/calendar.png",
+    tech: [
+      {
+        name: "React",
+        desc: "페이지 구성에 리액트가 사용되었습니다..",
+      },
+      {
+        name: "styled-components",
+        desc: "전체 스타일, 애니메이션에 사용되었습니다..",
+      },
+    ],
+  },
 ];
 
 export default function Portfolio() {
