@@ -46,7 +46,7 @@ const StyledNav = styled.div`
     display: none;
     padding: 2rem 0.5rem;
     align-items: center;
-    justify-content: flex;
+    justify-content: center;
     transition: 0.5s;
     transform: translateX(-100%);
     .btn-container {
