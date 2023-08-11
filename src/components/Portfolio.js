@@ -5,7 +5,7 @@ import Stack from "./Stack";
 
 const Background = styled.div`
   width: 100%;
-  padding: 0.5rem 0.25rem;
+  padding: 1rem 5%;
   box-sizing: border-box;
   background: #fff;
   display: flex;
@@ -20,6 +20,7 @@ const Background = styled.div`
     text-decoration: underline;
     opacity: 0.6;
   }
+  @media screen and (max-width: 550px);
 `;
 
 const Title = styled.p`
@@ -110,7 +111,7 @@ const ProjectBlock = styled.div`
   }
 
   @media screen and (max-width: 550px) {
-    padding: 0.25rem;
+    padding: 5% 3%;
     .img-con {
       width: 100%;
     }

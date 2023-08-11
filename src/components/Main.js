@@ -1,7 +1,7 @@
 import styled, { ThemeProvider, css } from "styled-components";
 
 const StyledMain = styled.div`
-  width: 70%;
+  width: 90%;
   background: #2d2d2e;
   color: #fff;
   margin: 5rem auto;
@@ -25,7 +25,7 @@ const StyledCodeBook = styled.div`
   box-sizing: border-box;
 
   .text h1 {
-    font-size: 75%;
+    font-size: 200%;
     min-width: 1rem;
     white-space: nowrap;
     color: transparent;
@@ -59,6 +59,9 @@ const StyledCodeBook = styled.div`
   }
 
   @media screen and (max-width: 550px) {
+    .text h1 {
+      font-size: 75%;
+    }
     .two {
       width: 120%;
     }

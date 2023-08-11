@@ -3,7 +3,7 @@ import { BiLink, BiPhone, BiMailSend, BiLogoGithub } from "react-icons/bi";
 
 const Background = styled.div`
   width: 100%;
-  padding: 3rem 0.25rem;
+  padding: 3rem 5%;
   box-sizing: border-box;
   background: #fff;
   display: flex;
