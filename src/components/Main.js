@@ -49,7 +49,7 @@ const StyledCodeBook = styled.div`
     animation: typing 1.8s steps(6);
   }
   .two {
-    width: 535px;
+    width: 100%;
   }
   .two h1::before {
     content: "개발자를 꿈꾸는 송명수입니다.";
@@ -63,7 +63,7 @@ const StyledCodeBook = styled.div`
       font-size: 75%;
     }
     .two {
-      width: 120%;
+      width: 70%;
     }
   }
 `;

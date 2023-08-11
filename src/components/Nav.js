@@ -5,14 +5,14 @@ import { useState } from "react";
 import "animate.css";
 
 const StyledNav = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 80px;
   background: #fff;
   /*box-shadow: 0px 25px 30px #fff;*/
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 1rem 4rem;
+  padding: 1rem 3rem;
   box-sizing: border-box;
   position: sticky;
   top: 0;
