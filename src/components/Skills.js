@@ -23,6 +23,21 @@ const SkilsBackground = styled.div`
     text-decoration: underline;
     opacity: 0.6;
   }
+
+  .flex-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 550px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  }
 `;
 const SkilsTilte = styled.p`
   height: 50px;
@@ -69,8 +84,16 @@ const SkilsContainer = styled.div`
 `;
 
 const StyledMotion = styled(motion.div)`
+  width: 45%;
   & + &:not(:nth-child(3)) {
     margin-left: 1rem;
+  }
+  @media screen and (max-width: 550px) {
+    width: 100%;
+
+    & + &:not(:nth-child(3)) {
+      margin: 0;
+    }
   }
 `;
 
@@ -98,8 +121,8 @@ export default function Skils() {
             <BiLink />
           </SkilsTilte>
         </a>
-        <div style={{ width: "100%", display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
-          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.2)} style={{ width: "45%" }}>
+        <div className="flex-container">
+          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.2)}>
             <SkilsContainer width={"100%"}>
               <h6 className="eng">HTML</h6>
               <div>
@@ -118,7 +141,7 @@ export default function Skils() {
               </div>
             </SkilsContainer>
           </StyledMotion>
-          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.4)} style={{ width: "45%" }}>
+          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.4)}>
             <SkilsContainer width={"100%"}>
               <h6 className="eng">Frontend</h6>
               <div className="tech">
@@ -127,7 +150,7 @@ export default function Skils() {
               </div>
             </SkilsContainer>
           </StyledMotion>
-          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.6)} style={{ width: "45%" }}>
+          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.6)}>
             <SkilsContainer width={"100%"}>
               <h6 className="eng">Backend</h6>
               <div>
@@ -142,7 +165,7 @@ export default function Skils() {
               </div>
             </SkilsContainer>
           </StyledMotion>
-          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.8)} style={{ width: "45%" }}>
+          <StyledMotion initial="up" whileInView="down" variants={container} viewport={{ once: true, amount: 0.8 }} transition={delayHandler(0.8)}>
             <SkilsContainer width={"100%"}>
               <h6 className="eng">FrameWork</h6>
               <div className="tech">

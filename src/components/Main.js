@@ -4,7 +4,7 @@ const StyledMain = styled.div`
   width: 70%;
   background: #2d2d2e;
   color: #fff;
-  margin: 15rem auto;
+  margin: 5rem auto;
   border-radius: 10px;
 `;
 const StyledTop = styled.div`
@@ -25,7 +25,7 @@ const StyledCodeBook = styled.div`
   box-sizing: border-box;
 
   .text h1 {
-    font-size: 2.2rem;
+    font-size: 75%;
     min-width: 1rem;
     white-space: nowrap;
     color: transparent;
@@ -57,6 +57,12 @@ const StyledCodeBook = styled.div`
     animation: typing 1.6s steps(14) forwards;
     animation-delay: 1.8s;
   }
+
+  @media screen and (max-width: 550px) {
+    .two {
+      width: 120%;
+    }
+  }
 `;
 
 const Circles = styled.div`
@@ -85,23 +91,21 @@ export default function Main() {
         },
       }}
     >
-      <div style={{ height: "52vh" }}>
-        <StyledMain className="eng">
-          <StyledTop>
-            <Circles color="green" />
-            <Circles color="yellow" />
-            <Circles color="red" />
-          </StyledTop>
-          <StyledCodeBook>
-            <div className="text one">
-              <h1>안녕하세요.</h1>
-            </div>
-            <div className="text two">
-              <h1>개발자를 꿈꾸는 송명수입니다.</h1>
-            </div>
-          </StyledCodeBook>
-        </StyledMain>
-      </div>
+      <StyledMain className="eng">
+        <StyledTop>
+          <Circles color="green" />
+          <Circles color="yellow" />
+          <Circles color="red" />
+        </StyledTop>
+        <StyledCodeBook>
+          <div className="text one">
+            <h1>안녕하세요.</h1>
+          </div>
+          <div className="text two">
+            <h1>개발자를 꿈꾸는 송명수입니다.</h1>
+          </div>
+        </StyledCodeBook>
+      </StyledMain>
     </ThemeProvider>
   );
 }

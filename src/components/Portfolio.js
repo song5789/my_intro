@@ -5,7 +5,7 @@ import Stack from "./Stack";
 
 const Background = styled.div`
   width: 100%;
-  padding: 2rem 6rem;
+  padding: 0.5rem 0.25rem;
   box-sizing: border-box;
   background: #fff;
   display: flex;
@@ -58,6 +58,7 @@ const ProjectBlock = styled.div`
   .img-con > img {
     max-width: 100%;
     border-radius: 15px;
+    box-shadow: 0 0 5px #000;
   }
 
   h1 {
@@ -106,6 +107,29 @@ const ProjectBlock = styled.div`
   .github {
     background: #000;
     color: #fff;
+  }
+
+  @media screen and (max-width: 550px) {
+    padding: 0.25rem;
+    .img-con {
+      width: 100%;
+    }
+    .container {
+      flex-direction: column;
+    }
+
+    button {
+      max-width: 150px;
+      margin-top: 1rem;
+    }
+    button + button {
+      margin-left: 0;
+    }
+    .b-con {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 `;
 

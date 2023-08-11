@@ -3,7 +3,7 @@ import { BiLink, BiPhone, BiMailSend, BiLogoGithub } from "react-icons/bi";
 
 const Background = styled.div`
   width: 100%;
-  padding: 3rem 6rem;
+  padding: 3rem 0.25rem;
   box-sizing: border-box;
   background: #fff;
   display: flex;
@@ -39,6 +39,14 @@ const ContactInfo = styled.div`
   box-sizing: border-box;
   font-size: 1.15rem;
   border: 1px solid black;
+
+  @media screen and (max-width: 550px) {
+    font-size: 0.8rem;
+
+    h2 + h2 {
+      margin-top: 1.8rem;
+    }
+  }
 `;
 
 export default function Contact() {
