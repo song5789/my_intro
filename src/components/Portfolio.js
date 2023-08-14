@@ -137,7 +137,7 @@ const ProjectBlock = styled.div`
 const projects = [
   {
     name: "영화 DB",
-    desc: "교육 과정의 최종 과제로써 TMDB 의 API를 활용한 영화, TV 시리즈의 정보 확인과 간단한 검색을 지원하는 페이지. 아직 미흡한 점도 많지만 차차 개선해나가볼 예정입니다.",
+    desc: "교육 과정의 최종 과제로써 TMDB 의 API를 활용한 영화, TV 시리즈의 정보 확인과 간단한 검색을 지원하는 페이지. 아직 미흡한 점도 많지만 차차 개선해나가볼 예정입니다. 반응형 디자인은 차차 제작할 예정입니다.",
     api: "TMDB API",
     github_path: "https://github.com/song5789/next-movie",
     page_path: "https://next-movie-kumxmbm5c-song5789.vercel.app/",
@@ -207,7 +207,7 @@ const projects = [
   },
   {
     name: "캘린더",
-    desc: "Todo-List 의 발전. 마찬가지로 Local Storage 를 이용하여 저장한 스케쥴을 로컬에 저장하고 불러옴. 캘린더를 눌러 일별로 스케쥴 넣기 가능. 오른쪽 창에서 모든 스케쥴을 한 번에 확인 가능하게 꾸며놓았습니다.",
+    desc: "달력상에 일자를 선택하여 스케쥴을 저장하는 것을 만들어보고 싶었습니다.",
     api: null,
     github_path: "https://github.com/song5789/local_calendar",
     page_path: "https://song5789.github.io/local_calendar/",
