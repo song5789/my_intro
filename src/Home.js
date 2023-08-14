@@ -47,7 +47,7 @@ export default function Home() {
   return (
     <motion.div variants={container} initial="hidden" animate="visible">
       <GradienBG>
-        <motion.div variants={item}>
+        <motion.div variants={item} style={{ position: "sticky", top: "0" }}>
           <Nav />
         </motion.div>
         <motion.div variants={item}>
