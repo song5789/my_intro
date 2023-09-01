@@ -16,7 +16,7 @@ const StyledNav = styled.div`
   box-sizing: border-box;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 15;
 
   .btn-container {
     display: flex;
@@ -44,6 +44,7 @@ const StyledNav = styled.div`
     width: 50vw;
     height: 100vh;
     display: none;
+
     padding: 2rem 0.5rem;
     align-items: center;
     justify-content: center;
@@ -61,7 +62,7 @@ const StyledNav = styled.div`
       props.open &&
       css`
         display: block;
-        position: fixed;
+        position: absolute;
         top: 50px;
         transform: translateX(0%);
       `}
@@ -75,14 +76,15 @@ const MobileNav = styled.div`
   background: #fff;
   padding-left: 0.5rem;
   box-sizing: border-box;
+  z-index: 15;
 
   @media screen and (max-width: 550px) {
     display: block;
-    position: sticky;
+    position: absolute;
     display: flex;
     align-items: center;
-    top: 0;
-    z-index: 5;
+    top: 0px;
+    z-index: 15;
   }
 `;
 const MenuButton = styled.div`
@@ -98,7 +100,7 @@ const ScrollProgress = styled(motion.div)`
   height: 10px;
   background: #f25f41;
   transform-origin: 0%;
-  z-index: 10;
+  z-index: 15;
 
   @media screen and (max-width: 550px) {
     display: none;
