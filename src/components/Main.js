@@ -9,6 +9,7 @@ const StyledMain = styled.div`
   box-sizing: border-box;
   text-align: center;
   -webkit-font-smoothing: antialiased;
+  font-family: "Jua", sans-serif !important;
 `;
 
 const bounce = keyframes`
@@ -28,13 +29,14 @@ const bounce = keyframes`
 `;
 
 const BouncedText = styled.div`
-  transform: rotate(370deg);
-
+  transform: rotate(-10deg);
+  transform: skew(-10deg);
   h1 {
     height: 100px;
     margin: 10px 0;
     position: relative;
     z-index: 0;
+    font-weight: 100;
   }
   h1 span {
     position: relative;
@@ -91,20 +93,17 @@ export default function Main() {
     <StyledMain className="eng">
       <BouncedText>
         <h1>
-          <span>안</span>
-          <span>녕</span>
-          <span>하</span>
-          <span>세</span>
-          <span>요</span>
-          <span>.</span>
+          <span>안녕하세요.</span>
+          <span>&nbsp;</span>
+          <span>풀스택</span>
+          <span>개발자</span>
+          <span>를</span>
         </h1>
       </BouncedText>
       <BouncedText>
         <h1>
-          <span>주</span>
-          <span>니</span>
-          <span>어</span>
-          <span> </span>
+          <span>꿈꾸는</span>
+          <span>&nbsp;</span>
           <span>송</span>
           <span>명</span>
           <span>수</span>
