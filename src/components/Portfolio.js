@@ -162,7 +162,11 @@ const projects = [
     image_path: "/local_todolist.png",
     tech: [
       {
-        name: "Flutter",
+        name: "React",
+        desc: "",
+      },
+      {
+        name: "styled-components",
         desc: "",
       },
     ],
@@ -176,11 +180,7 @@ const projects = [
     image_path: "/flutter_webtoon.png",
     tech: [
       {
-        name: "React",
-        desc: "",
-      },
-      {
-        name: "styled-components",
+        name: "Flutter",
         desc: "",
       },
     ],
