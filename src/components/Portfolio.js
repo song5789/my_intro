@@ -171,7 +171,7 @@ const projects = [
     name: "웹툰 앱",
     desc: "Flutter 강의 과정 앱을 개인적으로 약간 수정함.",
     api: null,
-    github_path: "https://https://github.com/song5789/webtoon_flutter",
+    github_path: "https://github.com/song5789/webtoon_flutter",
     page_path: null,
     image_path: "/flutter_webtoon.png",
     tech: [
