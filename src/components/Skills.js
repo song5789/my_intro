@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { MdBuild } from "react-icons/md";
-import { SiHtml5, SiCss3, SiJavascript, SiStyledcomponents, SiReact, SiNodedotjs, SiNextdotjs, SiSpring } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNodedotjs, SiNextdotjs, SiSpring, SiFlutter } from "react-icons/si";
 import { BiLink } from "react-icons/bi";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -154,6 +154,10 @@ export default function Skils() {
               <div className="tech">
                 <SiReact style={{ color: "#20dcf5" }} />
                 <div>React</div>
+              </div>
+              <div className="tech">
+                <SiFlutter style={{ color: "#32b0e6" }} />
+                <div>Flutter</div>
               </div>
             </SkilsContainer>
           </StyledMotion>
