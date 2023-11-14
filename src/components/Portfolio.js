@@ -145,11 +145,11 @@ const projects = [
     tech: [
       {
         name: "Next.js",
-        desc: "-",
+        desc: "",
       },
       {
         name: "React",
-        desc: "-",
+        desc: "",
       },
     ],
   },
@@ -162,11 +162,7 @@ const projects = [
     image_path: "/local_todolist.png",
     tech: [
       {
-        name: "React",
-        desc: "",
-      },
-      {
-        name: "styled-components",
+        name: "Flutter",
         desc: "",
       },
     ],
