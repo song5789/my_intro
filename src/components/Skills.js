@@ -62,6 +62,7 @@ const SkilsContainer = styled.div`
     display: flex;
     flex-direction: row;
     width: 100%;
+    justify-content: center;
   }
   &:hover {
     transform: translateY(-5%);
@@ -124,7 +125,7 @@ export default function Skils() {
         <a name="skils" href="#skils">
           <SkilsTilte>
             <MdBuild />
-            &nbsp;사용 기술
+            &nbsp;Skills
             <BiLink />
           </SkilsTilte>
         </a>
@@ -151,13 +152,15 @@ export default function Skils() {
           <StyledMotion variants={item}>
             <SkilsContainer width={"100%"}>
               <h6 className="eng">Frontend</h6>
-              <div className="tech">
-                <SiReact style={{ color: "#20dcf5" }} />
-                <div>React</div>
-              </div>
-              <div className="tech">
-                <SiFlutter style={{ color: "#32b0e6" }} />
-                <div>Flutter</div>
+              <div>
+                <div className="tech">
+                  <SiReact style={{ color: "#20dcf5" }} />
+                  <div>React</div>
+                </div>
+                <div className="tech">
+                  <SiFlutter style={{ color: "#32b0e6" }} />
+                  <div>Flutter</div>
+                </div>
               </div>
             </SkilsContainer>
           </StyledMotion>
