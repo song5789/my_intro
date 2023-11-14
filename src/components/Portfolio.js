@@ -177,7 +177,7 @@ const projects = [
     api: null,
     github_path: "https://https://github.com/song5789/webtoon_flutter",
     page_path: null,
-    image_path: "/local_todolist.png",
+    image_path: "/flutter_webtoon.png",
     tech: [
       {
         name: "React",
