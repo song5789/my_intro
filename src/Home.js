@@ -10,7 +10,7 @@ import LoadingBar from "./components/LoadingBar";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const [loading, SetLoading] = useState(false);
+  const [loading, SetLoading] = useState(true);
   const container = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -32,8 +32,6 @@ export default function Home() {
   };
 
   useEffect(() => {
-    SetLoading(true);
-
     setTimeout(() => {
       SetLoading(false);
     }, 2000);

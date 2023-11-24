@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import { MdBuild } from "react-icons/md";
-import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNodedotjs, SiNextdotjs, SiSpring, SiFlutter } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiReact, SiNodedotjs, SiNextdotjs, SiSpring, SiFlutter, SiFirebase, SiTypescript } from "react-icons/si";
 import { BiLink } from "react-icons/bi";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 
 const SkilsBackground = styled.div`
   width: 90%;
@@ -132,7 +131,6 @@ export default function Skils() {
         <motion.div className="flex-container" variants={container} initial="hidden" animate="visible">
           <StyledMotion variants={item}>
             <SkilsContainer width={"100%"}>
-              <h6 className="eng">HTML</h6>
               <div>
                 <div className="tech">
                   <SiHtml5 style={{ color: "tomato" }} />
@@ -151,7 +149,6 @@ export default function Skils() {
           </StyledMotion>
           <StyledMotion variants={item}>
             <SkilsContainer width={"100%"}>
-              <h6 className="eng">Frontend</h6>
               <div>
                 <div className="tech">
                   <SiReact style={{ color: "#20dcf5" }} />
@@ -166,7 +163,6 @@ export default function Skils() {
           </StyledMotion>
           <StyledMotion variants={item}>
             <SkilsContainer width={"100%"}>
-              <h6 className="eng">Backend</h6>
               <div>
                 <div className="tech t-two">
                   <SiNodedotjs style={{ color: "#32b83a" }} />
@@ -181,10 +177,19 @@ export default function Skils() {
           </StyledMotion>
           <StyledMotion variants={item}>
             <SkilsContainer width={"100%"}>
-              <h6 className="eng">FrameWork</h6>
-              <div className="tech">
-                <SiNextdotjs />
-                <div>Next.js</div>
+              <div>
+                <div className="tech">
+                  <SiNextdotjs />
+                  <div>Next.js</div>
+                </div>
+                <div className="tech">
+                  <SiFirebase style={{ color: "#edbc40" }} />
+                  <div>Firebase</div>
+                </div>
+                <div className="tech">
+                  <SiTypescript style={{ color: "#1173f2" }} />
+                  <div>TypeScript</div>
+                </div>
               </div>
             </SkilsContainer>
           </StyledMotion>

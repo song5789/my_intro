@@ -133,6 +133,15 @@ const ProjectBlock = styled.div`
   }
 `;
 
+const Wrapper = styled.div`
+  width: 100%;
+  padding: 5px;
+  height: 700px;
+  overflow-y: scroll;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+`;
+
 const projects = [
   {
     name: "영화 DB",
@@ -218,38 +227,40 @@ export default function Portfolio() {
             <BiLink />
           </Title>
         </a>
-        {projects.map((v, index) => (
-          <div key={index}>
-            <ProjectBlock>
-              <div className="container">
-                <div className="img-con">
-                  <img src={`https://song5789.github.io/my_intro${v.image_path}`} />
-                </div>
-                <div className="project-info">
-                  <h1>{v.name}</h1>
-                  <ul>
-                    <li>{v.desc}</li>
-                  </ul>
-                  <h2>사용한 기술들</h2>
-                  <Stack list={v.tech} />
-                  <div className="eng b-con">
-                    <button className="github">
-                      <a href={v.github_path} target="_blank" rel="noopener noreferrer">
-                        <BiLogoGithub /> Github Source
-                      </a>
-                    </button>
-                    <button>
-                      <a href={v.page_path || ""} target="_blank" rel="noopener noreferrer">
-                        {v.page_path ? "페이지 이동" : "페이지 없음"}
-                      </a>
-                    </button>
+        <Wrapper>
+          {projects.map((v, index) => (
+            <div key={index}>
+              <ProjectBlock>
+                <div className="container">
+                  <div className="img-con">
+                    <img src={`https://song5789.github.io/my_intro${v.image_path}`} />
+                  </div>
+                  <div className="project-info">
+                    <h1>{v.name}</h1>
+                    <ul>
+                      <li>{v.desc}</li>
+                    </ul>
+                    <h2>사용한 기술들</h2>
+                    <Stack list={v.tech} />
+                    <div className="eng b-con">
+                      <button className="github">
+                        <a href={v.github_path} target="_blank" rel="noopener noreferrer">
+                          <BiLogoGithub /> Github Source
+                        </a>
+                      </button>
+                      <button>
+                        <a href={v.page_path || ""} target="_blank" rel="noopener noreferrer">
+                          {v.page_path ? "페이지 이동" : "페이지 없음"}
+                        </a>
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </ProjectBlock>
-            <hr />
-          </div>
-        ))}
+              </ProjectBlock>
+              <hr />
+            </div>
+          ))}
+        </Wrapper>
       </Background>
     </>
   );
