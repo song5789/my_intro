@@ -20,7 +20,6 @@ const Background = styled.div`
     text-decoration: underline;
     opacity: 0.6;
   }
-  @media screen and (max-width: 550px);
 `;
 
 const Title = styled.p`
@@ -137,8 +136,7 @@ const ProjectBlock = styled.div`
 const projects = [
   {
     name: "영화 DB",
-    desc: " TMDB 의 API를 활용한 영화, TV 시리즈의 정보 확인과 간단한 검색을 지원하는 페이지. 아직 미흡한 점도 많지만 차차 개선해나가볼 예정.",
-    api: "TMDB API",
+    desc: " API를 활용한 영화, TV 시리즈의 정보 확인과 간단한 검색을 지원하는 페이지. 개선예정.",
     github_path: "https://github.com/song5789/next-movie",
     page_path: "https://next-movie-kumxmbm5c-song5789.vercel.app/",
     image_path: "/my_movie.png",
@@ -156,7 +154,7 @@ const projects = [
   {
     name: "Todo-List",
     desc: "Todo List 만들기.",
-    api: null,
+
     github_path: "https://github.com/song5789/local_todo/tree/main",
     page_path: "https://song5789.github.io/local_todo/",
     image_path: "/local_todolist.png",
@@ -173,14 +171,32 @@ const projects = [
   },
   {
     name: "웹툰 앱",
-    desc: "Flutter 강의 과정 앱을 개인적으로 약간 수정함.",
-    api: null,
+    desc: "Flutter 기초 공부 후 제작.",
+
     github_path: "https://github.com/song5789/webtoon_flutter",
     page_path: null,
     image_path: "/flutter_webtoon.png",
     tech: [
       {
         name: "Flutter",
+        desc: "",
+      },
+    ],
+  },
+  {
+    name: "트위터 클론",
+    desc: "Firebase + React 로 트윗 작성, 수정 등의 기능을 제공.",
+
+    github_path: "https://github.com/song5789/twitter_clone",
+    page_path: "https://x-reloaded-bf3ab.web.app/login",
+    image_path: "/x-clone.png",
+    tech: [
+      {
+        name: "React",
+        desc: "",
+      },
+      {
+        name: "Firebase",
         desc: "",
       },
     ],
@@ -209,7 +225,6 @@ export default function Portfolio() {
                   <h1>{v.name}</h1>
                   <ul>
                     <li>{v.desc}</li>
-                    <li>사용 API: {v.api || "사용 API 없음."}</li>
                   </ul>
                   <h2>사용한 기술들</h2>
                   <Stack list={v.tech} />
