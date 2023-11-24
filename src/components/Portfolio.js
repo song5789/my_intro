@@ -199,6 +199,10 @@ const projects = [
         name: "Firebase",
         desc: "",
       },
+      {
+        name: "TypeScript",
+        desc: "",
+      },
     ],
   },
 ];
