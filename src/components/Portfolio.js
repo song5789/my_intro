@@ -197,7 +197,7 @@ const projects = [
     desc: "Firebase + React 로 트윗 작성, 수정 등의 기능을 제공.",
 
     github_path: "https://github.com/song5789/twitter_clone",
-    page_path: "https://x-reloaded-bf3ab.web.app/login",
+    page_path: null,
     image_path: "/x-clone.png",
     tech: [
       {
@@ -248,11 +248,13 @@ export default function Portfolio() {
                           <BiLogoGithub /> Github Source
                         </a>
                       </button>
-                      <button>
-                        <a href={v.page_path || ""} target="_blank" rel="noopener noreferrer">
-                          {v.page_path ? "페이지 이동" : "페이지 없음"}
-                        </a>
-                      </button>
+                      {v.page_path ? (
+                        <button>
+                          <a href={v.page_path || ""} target="_blank" rel="noopener noreferrer">
+                            페이지 이동
+                          </a>
+                        </button>
+                      ) : null}
                     </div>
                   </div>
                 </div>
